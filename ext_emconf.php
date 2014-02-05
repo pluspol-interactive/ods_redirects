@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Simply manage (permanent 301) redirects in the list view. The extension supports multidomain sites, count the redirect usage and shows the last referer. UPDATE! imports the records from realurl.',
 	'category' => 'fe',
 	'author' => 'Robert Heel, Andreas Heling',
-	'author_email' => 'rheel@1drop.de',
+	'author_email' => 'aheling@1drop.de',
 	'shy' => '',
 	'dependencies' => '',
 	'conflicts' => '',
@@ -32,6 +32,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '1.1.0',
 	'constraints' => array(
 		'depends' => array(
+			'typo3' => '4.5.0-6.3.99',
 		),
 		'conflicts' => array(
 		),

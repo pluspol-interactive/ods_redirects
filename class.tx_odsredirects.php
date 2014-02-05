@@ -142,7 +142,7 @@ class tx_odsredirects {
 				$lang_detect[$parts[0]]=$parts[1];
 			}
 			foreach($lang_detect as $str=>$id){
-				if(strpos($source,strval($str))) $L=intval($id);
+				if(strpos($source,strval($str))!==false) $L=intval($id);
 			}
 		}
 		return $L;
