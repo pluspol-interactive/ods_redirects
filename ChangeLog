@@ -1,0 +1,32 @@
+2012-03-14 Robert Heel <rheel@1drop.de>
+	* Change: Removed automatic / removal, because it didn't work with realurl default configuration.
+
+2011-10-27 Robert Heel <rheel@1drop.de>
+	* Add: Frontend plugin for adding redirect to single page.
+
+2011-02-15 Robert Heel <rheel@1drop.de>
+	* Change: Use TYPO3 cObj to generate redirect links (Thanks to Jan Bartels).
+	* Change: More flexible redirect detection code.
+	* Bugfix: Also use L parameter for language detection.
+	* Bugfix: Add additional parameters with & if query string exists.
+
+2010-11-12 Robert Heel <rheel@1drop.de>
+	* Bugfix: Add http header "Connection: close" to avoid infinite loops in firefox.
+
+2010-09-13 Robert Heel <rheel@1drop.de>
+	* Bugfix: Removed column "deleted", now it's possible to create a deleted entry again.
+
+2010-08-09 Robert Heel <rheel@1drop.de>
+	* Bugfix: Correct detection of file path links.
+
+2010-06-16 Robert Heel <rheel@1drop.de>
+	* Add: Support email and domain links from link wizard.
+	* Add: realurl support if destination is a page id.
+	* Add: Language detection if destination is a page id.
+
+2010-06-07 Robert Heel <rheel@1drop.de>
+	* Add: Append remaining part of URL.
+	* Add: Documentation.
+
+2010-06-02 Robert Heel <rheel@1drop.de>
+	* Initial release.

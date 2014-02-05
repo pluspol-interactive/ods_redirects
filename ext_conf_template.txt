@@ -1,0 +1,2 @@
+# cat=basic; type=string; label=Language detection: Used to add L parameter to page ID redirects. Enter a semicolon divided list with search=language pairs, e.g. "/en/=0".
+lang_detect =
