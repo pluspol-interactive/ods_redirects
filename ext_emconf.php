@@ -29,10 +29,10 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => 'http://www.1drop.de/',
-	'version' => '1.1.0',
+	'version' => '1.1.1',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '4.5.0-6.3.99',
+			'typo3' => '4.5.0-6.2.99',
 		),
 		'conflicts' => array(
 		),
