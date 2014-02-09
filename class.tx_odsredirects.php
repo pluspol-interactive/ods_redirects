@@ -3,7 +3,15 @@ class tx_odsredirects {
 	function checkRedirect(&$params){
 		$pObj=$params['pObj'];
 //		$hash = t3lib_div::md5int($speakingURIpath);
-		$prio=array('0'=>50,'1'=>100,'2'=>200,'3'=>150);
+		/*
+			Priority (highest on top):
+			mode 2: Path and query string match
+			mode 3: Path and only given query parts match
+			mode 1: Path match
+			mode 0: Begins with path
+			mode 4: Path and query string regex match
+		*/
+		$prio=array('0'=>50,'1'=>100,'2'=>200,'3'=>150,'4'=>10);
 
 		// URL parts
 		$url=$pObj->siteScript;
@@ -11,11 +19,12 @@ class tx_odsredirects {
 
 		// Create query
 		$where=array(
-			'(url=LEFT('.$GLOBALS['TYPO3_DB']->fullQuoteStr($url,'tx_odsredirects_redirects').',LENGTH(url)) AND mode=0)', // Begins with URL
-			'(url='.$GLOBALS['TYPO3_DB']->fullQuoteStr($path,'tx_odsredirects_redirects').' AND mode=1)', // Path match
-			'(url='.$GLOBALS['TYPO3_DB']->fullQuoteStr($url,'tx_odsredirects_redirects').' AND mode=2)', // Path and query string match
+			'(mode=0 AND url=LEFT('.$GLOBALS['TYPO3_DB']->fullQuoteStr($url,'tx_odsredirects_redirects').',LENGTH(url)))', // Begins with URL
+			'(mode=1 AND url='.$GLOBALS['TYPO3_DB']->fullQuoteStr($path,'tx_odsredirects_redirects').')', // Path match
+			'(mode=2 AND url='.$GLOBALS['TYPO3_DB']->fullQuoteStr($url,'tx_odsredirects_redirects').')', // Path and query string match
+			'(mode=4 AND '.$GLOBALS['TYPO3_DB']->fullQuoteStr($url,'tx_odsredirects_redirects').' REGEXP url)', // Path and query string regex match
 		);
-		if(substr($path,-1)!='/') $where[]='(url='.$GLOBALS['TYPO3_DB']->fullQuoteStr($path.'/','tx_odsredirects_redirects').' AND mode=1)'; // Path match if entered without trailing '/'
+		if(substr($path,-1)!='/') $where[]='(mode=1 AND url='.$GLOBALS['TYPO3_DB']->fullQuoteStr($path.'/','tx_odsredirects_redirects').')'; // Path match if entered without trailing '/'
 
 		// Fetch redirects
 		$res=$GLOBALS['TYPO3_DB']->exec_SELECTquery(
@@ -71,6 +80,7 @@ class tx_odsredirects {
 			);
 
 			// Build destination URL
+			if($redirect['mode']==4) $redirect['destination']=preg_replace('/'.$redirect['url'].'/i',$redirect['destination'],$url);
 			$destination=$this->getLink($redirect['destination'],$_SERVER['HTTP_HOST'].'/'.$url);
 
 			// Append trailing url

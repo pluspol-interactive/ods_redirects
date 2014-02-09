@@ -47,8 +47,9 @@ $TCA['tx_odsredirects_redirects'] = array (
 				'items' => array (
 				array('LLL:EXT:ods_redirects/locallang_db.xml:tx_odsredirects_redirects.mode.I.0', '0'),
 				array('LLL:EXT:ods_redirects/locallang_db.xml:tx_odsredirects_redirects.mode.I.1', '1'),
-// 				array('LLL:EXT:ods_redirects/locallang_db.xml:tx_odsredirects_redirects.mode.I.3', '3'),
 				array('LLL:EXT:ods_redirects/locallang_db.xml:tx_odsredirects_redirects.mode.I.2', '2'),
+// 				array('LLL:EXT:ods_redirects/locallang_db.xml:tx_odsredirects_redirects.mode.I.3', '3'),
+ 				array('LLL:EXT:ods_redirects/locallang_db.xml:tx_odsredirects_redirects.mode.I.4', '4'),
 			),
 			'size' => 1,
 			'maxitems' => 1,

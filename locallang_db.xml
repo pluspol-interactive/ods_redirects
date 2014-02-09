@@ -13,6 +13,7 @@
 			<label index="tx_odsredirects_redirects.mode.I.1">Path match</label>
 			<label index="tx_odsredirects_redirects.mode.I.2">Path and query string match</label>
 			<label index="tx_odsredirects_redirects.mode.I.3">Path and only given query parts match</label>
+			<label index="tx_odsredirects_redirects.mode.I.4">Path and query string regex match</label>
 			<label index="tx_odsredirects_redirects.mode">Mode</label>
 			<label index="tx_odsredirects_redirects.destination">Destination</label>
 			<label index="tx_odsredirects_redirects.append">Append rest of URL</label>
@@ -29,6 +30,7 @@
 			<label index="tx_odsredirects_redirects.mode.I.1">Pfad muss übereinstimmen</label>
 			<label index="tx_odsredirects_redirects.mode.I.2">Pfad und Query string müssen übereinstimmen</label>
 			<label index="tx_odsredirects_redirects.mode.I.3">Pfad und vorhandene Query parts müssen übereinstimmen</label>
+			<label index="tx_odsredirects_redirects.mode.I.4">Pfad und Query string müssen dem regulären Ausdruck entsprechen</label>
 			<label index="tx_odsredirects_redirects.mode">Modus</label>
 			<label index="tx_odsredirects_redirects.destination">Ziel</label>
 			<label index="tx_odsredirects_redirects.append">Restliche URL anhängen</label>

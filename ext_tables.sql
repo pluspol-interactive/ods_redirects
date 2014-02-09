@@ -19,5 +19,6 @@ CREATE TABLE tx_odsredirects_redirects (
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid),
+	KEY mode (mode),
 	UNIQUE url (url,mode,domain_id)
 );
