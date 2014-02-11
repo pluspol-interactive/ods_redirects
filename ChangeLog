@@ -3,8 +3,8 @@
 	* Add: Index on column mode to ensure the database engine process this column first.
 
 2014-02-05 Robert Heel <typo3@bobosch.de>
-	* Bugfix: Detect L parameter if complete domain is configured.
-	* Change: Allow redirect records in all sysfolders.
+	* Bugfix: Detect L parameter if complete domain is configured (Thanks to Ben Robinson).
+	* Change: Allow redirect records in all sysfolders (Thanks to Ben Robinson).
 
 2012-03-14 Robert Heel <rheel@1drop.de>
 	* Change: Removed automatic / removal, because it didn't work with realurl default configuration.
