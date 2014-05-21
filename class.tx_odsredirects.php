@@ -123,7 +123,7 @@ class tx_odsredirects {
 		}elseif(strpos($destination,'/')!==false){
 			// path
 			return $destination;
-		}elseif(is_numeric($destination)){
+		}else{
 			// page id
 			// language detection
 			$L=$this->languageDetection($source);
@@ -131,9 +131,6 @@ class tx_odsredirects {
 			$url=$this->buildURL($destination,$L);
 			if(!$url) $url='index.php?id='.$destination.($L===false ? '' : '&L='.$L);
 			return $url;
-		}else{
-			// alias
-			return 'index.php?id='.$destination;
 		}
 	}
 
